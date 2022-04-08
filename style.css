@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, hsl(200, 71%, 38%), hsl(1, 71%, 80%));
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+.container {
+  height: 100%;
+  width: 1200px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#heading {
+  font-family: "Arial";
+  font-size: 5rem;
+  font-variant-caps: all-small-caps;
+  color: hsl(50, 62%, 55%);
+  text-shadow: 0px 2px 1px rgb(255, 227, 86);
+}
+form {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#textBox,
+#generatebutton {
+  border: 0;
+  font-size: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px 0px hsl(0, 0%, 20%);
+}
+#textBox {
+  appearance: textfield;
+  box-sizing: initial;
+  width: 342px;
+  padding: 0.6em 2em;
+  background-color: hsl(336, 80%, 77%);
+  border: 1px solid hsl(336, 80%, 70%);
+}
+#textBox::placeholder {
+  color: black;
+  opacity: 1;
+}
+#textBox:focus {
+  outline: none;
+  outline: 1px solid hsl(336, 80%, 70%);
+}
+#generatebutton {
+  padding: 0.6em 1em;
+  background-color: hsl(83, 95%, 69%);
+  border: 1px solid hsl(83, 95%, 65%);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+#generatebutton:active,
+#generatebutton:focus {
+  outline: none;
+  background-color: hsl(83, 95%, 49%);
+  border: 1px solid hsl(83, 95%, 45%);
+  outline: 1px solid hsl(83, 95%, 45%);
+}
+#grid {
+  width: 100%;
+  height: 500px;
+  max-height: 60vh;
+  border-radius: 16px;
+  background-color: hsla(0, 0%, 90%, 0.3);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 80px;
+  overflow: hidden;
+  gap: 10px;
+}
+.gift {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: url("images/whipUpImage.jpg");
+  background-size: cover;
+}
+.giftNo {
+  position: absolute;
+  top: 2px;
+  left: 8px;
+}
+@media only screen and (max-width: 500px) {
+  #heading {
+    font-size: 4rem;
+  }
+  .container {
+    height: 100%;
+  }
+  form {
+    flex-grow: 0;
+  }
+  #grid {
+    overflow-y: scroll;
+  }
+  #textBox {
+    width: 100%;
+  }
+  #generatebutton {
+    width: 100%;
+    margin: 1rem 0rem;
+  }
+}
